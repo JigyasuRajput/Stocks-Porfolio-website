@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finance: {% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="synthwave-bg">
+    <div class="wrapper"> <!-- Added wrapper class here -->
+        <nav class="navbar navbar-expand-md navbar-dark synthwave-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand synthwave-logo" href="/">
+                    <span class="neon-text">Finance</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav me-auto mt-2">
+                            <li class="nav-item"><a class="btn btn-synthwave me-2 mb-2 mb-md-0" href="/quote">Quote</a></li>
+                            <li class="nav-item"><a class="btn btn-synthwave me-2 mb-2 mb-md-0" href="/buy">Buy</a></li>
+                            <li class="nav-item"><a class="btn btn-synthwave me-2 mb-2 mb-md-0" href="/sell">Sell</a></li>
+                            <li class="nav-item"><a class="btn btn-synthwave me-2 mb-2 mb-md-0" href="/history">History</a></li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="btn btn-synthwave-logout" href="/change_password">Change Password</a></li>
+                            <li class="nav-item"><a class="btn btn-synthwave-logout" href="/logout">Log Out</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="btn btn-synthwave me-2 mb-2 mb-md-0" href="/register">Register</a></li>
+                            <li class="nav-item"><a class="btn btn-synthwave" href="/login">Log In</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <div class="alert synthwave-alert mb-0 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        {% endif %}
+
+        <main class="container py-5 synthwave-main">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="synthwave-footer text-center py-3">
+            <div class="container">
+                <span class="neon-text">Data provided by <a href="https://finance.yahoo.com/" class="neon-link">Yahoo</a></span>
+            </div>
+        </footer>
+    </div> <!-- Closing wrapper div -->
+</body>
+</html>

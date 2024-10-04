@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2 class="neon-text">Portfolio</h2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price | usd }}</td>
+                    <td>{{ stock.total | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-end"><strong>Cash Balance:</strong></td>
+                <td>{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="text-end"><strong>Grand Total:</strong></td>
+                <td>{{ grand_total | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

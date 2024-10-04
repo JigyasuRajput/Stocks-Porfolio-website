@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote
+{% endblock %}
+
+{% block main %}
+    <h1>Stock Quote</h1>
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="symbol" placeholder="Stock Symbol" type="text">
+        </div>
+        <button class="btn btn-synthwave-logout" type="submit">submit</button>
+    </form>
+{% endblock %}

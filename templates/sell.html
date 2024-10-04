@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell 
+{% endblock %}
+
+{% block main %}
+    <h1>Sell Stocks!</h1>
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <label class="form-heading" for="symbol">Stock Symbol</label>
+            <select class="form-control" id="symbol" name="symbol">
+                <option value="">Select stock</option>
+                {% for stock in stocks %}
+                    <option value="{{ stock.symbol }}">{{ stock.symbol }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-heading"  for="shares">Number of Shares</label>
+            <input class="form-control" id="shares" name="shares" type="text" placeholder="Number of shares">
+        </div>
+        <button class="btn btn-synthwave-logout" type="submit">Sell</button>
+    </form>
+{% endblock %}

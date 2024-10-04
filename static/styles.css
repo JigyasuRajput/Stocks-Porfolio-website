@@ -1,0 +1,203 @@
+/* Synthwave-inspired styles for C$50 Finance */
+
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Ensure full height for the wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make wrapper fill the viewport height */
+}
+
+/* Main content area */
+.synthwave-main {
+    background: rgb(118 69 181 / 60%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    flex: 1; /* Allow main to grow and fill available space */
+    display: flex;
+    flex-direction: column; /* If you have content to stack vertically */
+    justify-content: center; /* Center content vertically (optional) */
+    align-items: center; /* Center content horizontally (optional) */
+}
+
+.img-fluid {
+    max-width: 100%;
+    margin-left: 33%;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+.synthwave-bg {
+    background: #f0e6ff; /* Very light purple background */
+}
+
+/* Neon text effect */
+.neon-text {
+    color: #fff; /* Base text color */
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #ff00de,
+        0 0 35px #ff00de,
+        0 0 40px #ff00de,
+        0 0 50px #ff00de,
+        0 0 75px #ff00de; /* Neon glow effect */
+    font-weight: bold; /* Bold text for better visibility */
+    text-align: center; /* Center the text */
+    animation: flicker 0.5s infinite alternate; /* Flicker effect */
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Navbar styles */
+.synthwave-nav {
+    background: rgba(26, 15, 40, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.synthwave-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family: none;
+}
+
+/* Footer styles */
+.synthwave-footer {
+    background: rgba(26, 15, 40, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px; /* Optional: Add padding for aesthetics */
+}
+
+/* Centered headings */
+h1, h2, h3, h4, h5, h6 {    
+    text-align: center;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1.5px;
+}
+
+/* Alert styles */
+.synthwave-alert {
+    background: rgba(255, 0, 221, 0.2);
+    border-color: #ff00de;
+    color: #fff;
+}
+
+/* Neon link styles */
+.neon-link {
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.neon-link:hover {
+    color: #ff00de;
+    text-shadow: 0 0 5px #ff00de,
+                 0 0 10px #ff00de,
+                 0 0 15px #ff00de,
+                 0 0 20px #ff00de;
+}
+
+/* Form styles */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.form-heading {
+    font-size: large;
+}
+
+
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #00ffff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
+    color: #000000;
+}
+
+/* Synthwave button styles */
+.btn-synthwave, .btn-synthwave-logout {
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-synthwave {
+    background-color: rgba(255, 0, 221, 0.2);
+    border: 2px solid #ff00de;
+}
+
+.btn-synthwave:hover, .btn-synthwave:focus {
+    background-color: rgba(255, 0, 221, 0.4);
+    border-color: #ff00de;
+    box-shadow: 0 0 10px #ff00de,
+                0 0 20px #ff00de,
+                0 0 30px #ff00de;
+}
+
+.btn-synthwave-logout {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 2px solid #ff0000;
+}
+
+.btn-synthwave-logout:hover, .btn-synthwave-logout:focus {
+    background-color: rgba(255, 0, 0, 0.4);
+    border-color: #ff0000;
+    box-shadow: 0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .h2, h2 {
+        font-size: 3rem;
+        font-family: serif;
+    }
+}
